@@ -1,0 +1,14 @@
+FROM cgr.dev/chainguard/node:latest-dev
+USER root
+WORKDIR /app
+
+COPY package.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+RUN npm install --no-save serve
+
+EXPOSE 4173
+
+CMD ["./node_modules/serve/build/main.js", "-s", "dist", "-l", "4173"]
