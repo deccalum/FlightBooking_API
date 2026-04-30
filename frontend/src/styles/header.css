@@ -1,16 +1,193 @@
-.header {}
+/* ── Header ──────────────────────────────────────────────
+   Mobile-first. Nav links hidden below sm, shown above.
+   ──────────────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-top: var(--safe-top);
+}
 
-.header__container {}
+.header__container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  gap: var(--space-3);
+}
 
-.header__logo {}
-.header__logo-icon {}
-.header__logo-text {}
 
-.header__nav {}
-.header__nav-link {}
-.header__nav-link--active {}
+/* ── Logo ─────────────────────────────────────────────── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  min-height: unset;
+  min-width: unset;
+}
 
-.header__controls {}
-.header__currency {}
-.header__theme-toggle {}
-.header__account {}
+.header__logo-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  opacity: 0.75;
+}
+
+.header__logo-text {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+
+/* ── Divider ──────────────────────────────────────────── */
+.header__divider {
+  display: none;
+  width: 1px;
+  height: 1.1rem;
+  background-color: var(--color-border);
+  flex-shrink: 0;
+}
+
+
+/* ── Nav ──────────────────────────────────────────────── */
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.header__nav-link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.header__nav-link:hover {
+  color: var(--color-text);
+  background-color: var(--color-overlay-light);
+}
+
+.header__nav-link--active {
+  color: var(--color-text);
+  background-color: var(--color-overlay);
+  font-weight: 600;
+}
+
+
+/* ── Controls ─────────────────────────────────────────── */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+/* Currency pill — outlined */
+.header__currency {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-3);
+  height: 1.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  min-height: unset;
+  min-width: unset;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.header__currency:hover {
+  border-color: var(--color-text);
+  background-color: var(--color-overlay-light);
+}
+
+/* Theme toggle — ghost round */
+.header__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.header__theme-toggle:hover {
+  color: var(--color-text);
+  background-color: var(--color-overlay-light);
+}
+
+/* Account — solid filled pill */
+.header__account {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 var(--space-3);
+  height: 1.875rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  min-height: unset;
+  min-width: unset;
+  transition: opacity var(--transition);
+}
+
+.header__account:hover {
+  opacity: 0.8;
+}
+
+/* "Account" text hidden on small screens — icon only */
+.header__account-label {
+  display: none;
+}
+
+
+/* ── sm (640px): show nav, dividers, currency, label ──── */
+@media (min-width: 640px) {
+  .header__nav {
+    display: flex;
+  }
+
+  .header__divider {
+    display: block;
+  }
+
+  .header__currency {
+    display: flex;
+  }
+
+  .header__account-label {
+    display: inline;
+  }
+}

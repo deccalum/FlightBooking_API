@@ -1,1 +1,307 @@
-.hero {}
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+
+/* ── Prelude ──────────────────────────────────────────── */
+.hero__prelude {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.hero__heading {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.hero__subheading {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+}
+
+
+/* ── Search card ──────────────────────────────────────── */
+.hero__search {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+
+/* ── Options row ──────────────────────────────────────── */
+.hero__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero__trip-type {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.hero__radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  min-height: unset;
+  min-width: unset;
+  user-select: none;
+}
+
+.hero__radio input[type='radio'] {
+  accent-color: var(--color-accent);
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.hero__trip-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero__meta-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.hero__meta-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+
+/* ── Fields row — mobile: stacked column ──────────────── */
+.hero__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+
+/* ── Individual field ─────────────────────────────────── */
+.hero__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;
+}
+
+.hero__field-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero__field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero__field-input {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition);
+}
+
+.hero__field-input:focus-within {
+  border-color: var(--color-text-muted);
+}
+
+.hero__field-icon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.hero__field-input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.hero__field-input input::placeholder {
+  color: var(--color-text-muted);
+}
+
+
+/* ── Swap button ──────────────────────────────────────── */
+.hero__swap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.hero__swap:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+
+/* ── Dates mode toggle ────────────────────────────────── */
+.hero__dates-mode {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding: 0.15rem var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  min-height: unset;
+  min-width: unset;
+  transition: all var(--transition);
+}
+
+.hero__dates-mode:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.hero__dates-mode--flex {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+  background-color: var(--color-overlay-light);
+}
+
+
+/* ── Flexible duration chips ──────────────────────────── */
+.hero__flex-chips {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding: var(--space-2) 0;
+  /* same height as a field-input so row stays aligned */
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+.hero__flex-chip {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  min-height: unset;
+  min-width: unset;
+  transition: all var(--transition);
+}
+
+.hero__flex-chip:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.hero__flex-chip--active {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  background-color: var(--color-overlay);
+}
+
+
+/* ── Book button ──────────────────────────────────────── */
+.hero__book-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  min-height: unset;
+  min-width: unset;
+  transition: opacity var(--transition);
+}
+
+.hero__book-btn:hover {
+  opacity: 0.85;
+}
+
+
+/* ── md (768px): single horizontal row ───────────────── */
+@media (min-width: 768px) {
+  .hero__fields {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: var(--space-2);
+  }
+
+  .hero__swap {
+    /* align-self: flex-end already positions it with the inputs */
+    align-self: flex-end;
+    margin-bottom: 0;
+  }
+
+  .hero__book-btn {
+    width: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: var(--space-3) var(--space-8);
+  }
+
+  .hero__field--dates {
+    flex: 1.2;
+  }
+}
