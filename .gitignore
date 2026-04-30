@@ -5,5 +5,7 @@
 *.ipr
 .vscode/
 
-### ??? ###
+### PROJECT ###
 .env*
+CLAUDE.md*
+TODO.md*

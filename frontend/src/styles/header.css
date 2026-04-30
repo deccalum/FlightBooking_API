@@ -1,0 +1,16 @@
+.header {}
+
+.header__container {}
+
+.header__logo {}
+.header__logo-icon {}
+.header__logo-text {}
+
+.header__nav {}
+.header__nav-link {}
+.header__nav-link--active {}
+
+.header__controls {}
+.header__currency {}
+.header__theme-toggle {}
+.header__account {}
