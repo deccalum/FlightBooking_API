@@ -1,1 +1,143 @@
-.featured {}
+/* ── Featured Flights ─────────────────────────────────── */
+.featured {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-4) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.featured__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+
+.featured__title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.featured__view-all {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  min-height: unset;
+  min-width: unset;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.featured__view-all:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+
+/* ── Horizontal scroller ──────────────────────────────── */
+.featured__scroller {
+  display: flex;
+  width: 100%;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-1);
+  scrollbar-width: none;
+}
+
+.featured__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ── Card ─────────────────────────────────────────────── */
+.featured__card {
+  flex: 0 0 100%;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.featured__card-image {
+  width: 100%;
+  height: 10rem;
+  background-color: var(--color-surface);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.featured__card-body {
+  margin-top: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  background: var(--color-accent-fg);
+  backdrop-filter: blur(4px);
+}
+
+.featured__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featured__card-cities {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.featured__card-price {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.featured__card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.featured__card-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.featured__card-dates {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.featured__card-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent);
+  color: var(--color-accent-fg);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  min-height: unset;
+  min-width: unset;
+  transition: opacity var(--transition);
+}
+
+.featured__card-btn:hover {
+  opacity: 0.8;
+}

@@ -173,6 +173,58 @@
 }
 
 
+/* ── Hamburger — mobile only ──────────────────────────── */
+.header__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition), background-color var(--transition);
+}
+
+.header__menu-btn:hover {
+  color: var(--color-text);
+  background-color: var(--color-overlay-light);
+}
+
+
+/* ── Mobile dropdown nav ──────────────────────────────── */
+.header__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+}
+
+.header__mobile-link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  min-height: unset;
+  min-width: unset;
+  transition: color var(--transition);
+}
+
+.header__mobile-link:last-child {
+  border-bottom: none;
+}
+
+.header__mobile-link:hover,
+.header__mobile-link--active {
+  color: var(--color-text);
+}
+
+
 /* ── sm (640px): show nav, dividers, currency, label ──── */
 @media (min-width: 640px) {
   .header__nav {
@@ -189,5 +241,9 @@
 
   .header__account-label {
     display: inline;
+  }
+
+  .header__menu-btn {
+    display: none;
   }
 }

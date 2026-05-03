@@ -1,4 +1,3 @@
-import '../styles/start.css';
 import Hero from '../components/Hero';
 import Featured from '../components/Featured';
 

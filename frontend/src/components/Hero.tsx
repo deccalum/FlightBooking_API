@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import {
-  MdSwapHoriz,
+  MdSwapVert,
   MdMyLocation,
-  MdLocationSearching,
+  MdLocationOn,
   MdCalendarMonth,
   MdPeople,
   MdAirlineSeatReclineNormal,
+  MdSearch,
 } from 'react-icons/md';
 import '../styles/hero.css';
 
@@ -70,14 +71,14 @@ export default function Hero() {
             className="hero__swap"
             aria-label="Swap origin and destination"
           >
-            <MdSwapHoriz size={18} />
+            <MdSwapVert size={18} />
           </button>
 
           {/* TO */}
           <div className="hero__field">
             <span className="hero__field-label">To</span>
             <div className="hero__field-input">
-              <MdLocationSearching size={15} className="hero__field-icon" />
+              <MdLocationOn size={15} className="hero__field-icon" />
               <input type="text" placeholder="Destination" />
             </div>
           </div>
@@ -119,8 +120,12 @@ export default function Hero() {
           </div>
 
           {/* BOOK */}
-          <button type="submit" className="hero__book-btn">
-            Book
+          <button
+            type="submit"
+            className="hero__book-btn"
+          >
+            <MdSearch size={16} />
+            Search
           </button>
 
         </div>
